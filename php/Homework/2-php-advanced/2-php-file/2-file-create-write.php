@@ -43,6 +43,7 @@ fwrite($myfile, $txt);
 fclose($myfile); 
 echo readfile ("yourname.txt");
 echo "<br>";
+
 //EX2:
 $myfile = fopen("yourname.txt", "a+") or die("unable to open file");
 $txt = "\n Project";

@@ -9,7 +9,8 @@ echo "<a href=\"./\">BACK</a>";
  */
 echo "<h1>1. FORM HANDLING</h1>";
 /*
- * EXERCISE 1 : Create form, input your name and the project which you wanna do and show it after submit form to itself, using method POST
+ * EXERCISE 1 : Create form, input your name and the project which you wanna do 
+ * and show it after submit form to itself, using method POST
  *
  */
 /*
@@ -44,7 +45,6 @@ echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
 <html>
     <head>
     <style>
-
     input{
         margin: 5px ;
     }
@@ -62,6 +62,6 @@ echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $name = $_POST["name"];
 $project = $_POST["project"];
-echo "Your name is $name and name of your project is $project";
+echo "My name is $name and name of my project is $project";
 }
 ?>

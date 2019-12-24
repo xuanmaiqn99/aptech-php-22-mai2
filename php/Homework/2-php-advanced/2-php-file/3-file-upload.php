@@ -66,30 +66,25 @@ echo "There was an error uploading your file";
 ?>
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <body>
-
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileUpload" value="">
+    <input type="submit" name="up" value="Upload">
 </form>
-
-</body>
-</html>
 <?php
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
+if (isset($_POST['up']) && isset($_FILES['fileUpload'])) {
+    if ($_FILES['fileUpload']['error'] > 0)
+        echo "Upload failed";
+    else {
+        move_uploaded_file($_FILES['fileUpload']['tmp_name'], 'upload/' . $_FILES['fileUpload']['name']);
+        echo "Upload successed <br/>";
+        echo 'Part working: upload/' . $_FILES['fileUpload']['name'] . '<br>';
+        echo 'Type of file: ' . $_FILES['fileUpload']['type'] . '<br>';
+        echo 'File size: ' . ((int)$_FILES['fileUpload']['size'] / 1024) . 'KB';
     }
 }
 ?>
+</body>
+</html>

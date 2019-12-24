@@ -23,6 +23,6 @@ echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
 </body>
 </html>
 <?php
-require 'header.php';
-include 'footer.php';
+require './header.php';
+include './footer.php';
 ?>
