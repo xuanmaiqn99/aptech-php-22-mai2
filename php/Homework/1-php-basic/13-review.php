@@ -34,97 +34,117 @@ $authors = [
 echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
 
 //EX1:
+$authors = [
+    [
+        "name" => "Lorem",
+        "age" => "18",
+        "posts_quantity" => "5",
+    ],
+    [
+        "name" => "Mai",
+        "age" => "21",
+        "posts_quantity" => "15",
+    ],
+    [
+        "name" => "Nam",
+        "age" => "30",
+        "posts_quantity" => "10",
+    ],
+    [
+        "name" => "Hung",
+        "age" => "29",
+        "posts_quantity" => "19",
+    ],
+    [
+        "name" => "Lan",
+        "age" => "20",
+        "posts_quantity" => "11",
+    ],
+];
 ?>
+        
+<!-- EX 2: -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <style>
-        td,
-        th {
-            border: 1px solid black;
-        }
-        </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
-
     <body>
-        <?php
-        $authors = [
-            [
-                "name" => "Lorem",
-                "age" => "18",
-                "posts_quantity" => "5",
-            ],
-            [
-                "name" => "Mai",
-                "age" => "21",
-                "posts_quantity" => "15",
-            ],
-            [
-                "name" => "Nam",
-                "age" => "30",
-                "posts_quantity" => "10",
-            ],
-            [
-                "name" => "Hung",
-                "age" => "29",
-                "posts_quantity" => "19",
-            ],
-            [
-                "name" => "Lan",
-                "age" => "20",
-                "posts_quantity" => "11",
-            ],
-        ];
-        ?>
-        <table>
-            <thead>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Counting</th>
-                <th>Salary</th>
-            </thead>
-            <tbody>
-                <?php
-                for($i=0; $i<count($authors); $i++){
+        <div class="container">
+            <table class="table table-bordered table-hover">
+                <thead class="text-success bg-dark">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Counting</th>
+                    <th>Salary</th>
+                </thead>
+                <tbody>
+                    <?php
+                    $authors = [
+                        [
+                            "name" => "Lorem",
+                            "age" => "18",
+                            "posts_quantity" => "5",
+                        ],
+                        [
+                            "name" => "Mai",
+                            "age" => "21",
+                            "posts_quantity" => "15",
+                        ],
+                        [
+                            "name" => "Nam",
+                            "age" => "30",
+                            "posts_quantity" => "10",
+                        ],
+                        [
+                            "name" => "Hung",
+                            "age" => "29",
+                            "posts_quantity" => "19",
+                        ],
+                        [
+                            "name" => "Lan",
+                            "age" => "20",
+                            "posts_quantity" => "11",
+                        ],
+                    ];
+                    for($i=0; $i<count($authors); $i++){
                     ?>
                     <tr>
-                    <td>
-                    <?php
-                        echo $authors[$i]["name"];
+                        <td>
+                            <?php
+                                echo $authors[$i]["name"];
+                                ?>
+                        </td>
+                        <td>
+                            <?php
+                                echo $authors[$i]["age"];
+                                ?>
+                        </td>
+                        <td> 
+                            <?php
+                                echo $authors[$i]["posts_quantity"];
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                                if($authors[$i]["posts_quantity"] > 10){
+                                    echo $authors[$i]["posts_quantity"]*10000;
+                                } else {
+                                    echo 0;
+                                };
+                            ?>
+                        </td>
+                        <?php
+                        }
                         ?>
-                    </td>
-                    <td>
-                    <?php
-                        echo $authors[$i]["age"];
-                        ?>
-                    </td>
-                    <td> 
-                    <?php
-                        echo $authors[$i]["posts_quantity"];
-                    ?>
-                    </td>
-                    <td>
-                    <?php
-                        if($authors[$i]["posts_quantity"] > 10){
-                            echo $authors[$i]["posts_quantity"]*10000;
-                        } else {
-                            echo 0;
-                        };
-                    ?>
-                    </td>
-                <?php
-                }
-                ?>
-                </tr>
-            </tbody>
-        </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
-<?php
-//EX 2:
-
-?>
