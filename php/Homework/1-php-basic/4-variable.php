@@ -13,7 +13,8 @@ echo "<a href=\"./\">BACK</a>";
  */
 echo "<h1>4. VARIABLES</h1>";
 /*
- * EXERCISE 1 : Assigning your name to variable $myName and your project's name to variable $myProject, display it in 1 line by echo and print, using double quoted and quotation mark.
+ * EXERCISE 1 : Assigning your name to variable $myName and your project's name to variable $myProject, 
+ * display it in 1 line by echo and print, using double quoted and quotation mark.
  *
  */
 /*
@@ -24,7 +25,7 @@ echo "<h1>4. VARIABLES</h1>";
  * print_r($myName . ' - ' . $myProject);
  */
 echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
-$myName = 'Bui Thi Xuan Mai';
-$myProject = 'Mai';
-print( $myName. ' - ' . $myProject);
+$myName = "Bui Thi Xuan Mai";
+$myProject = "Mai";
+print( $myName. " - " . $myProject);
 ?>
