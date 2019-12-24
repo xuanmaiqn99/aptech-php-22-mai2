@@ -23,8 +23,9 @@ echo "<h1>5. CONSTANT</h1>";
  * echo "<br>" . MY_NAME;
  */
 echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
-//SUGGESTION :
- define("name","Bui Thi Xuan Mai", false);
- echo name;
- echo "<br>" . NAME;
+
+ define("name","Bui Thi Xuan Mai", true);
+ echo NAME;
+ echo "<br>" . name;
+  //phab biet chu hoa va chu thuong
  ?> 

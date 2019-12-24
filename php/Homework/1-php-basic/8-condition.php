@@ -52,8 +52,9 @@ if ($a > $b) {
 } 
 else echo "$a smaller than $b";
 */
+
 //EX2:
-/*
+
 $language = 'HTML';
 switch($language){
    case 'HTML':
@@ -65,5 +66,4 @@ switch($language){
    default:
    echo "can not find meaning your language";
 }
-*/
 ?>
