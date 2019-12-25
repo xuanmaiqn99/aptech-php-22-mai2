@@ -1,5 +1,6 @@
 -- FOREIGN KEY --
--- EXERCISE 1 : Create table Role describe role of user in database and add some values.
+-- EXERCISE 1 : Create table Role describe role of user in database and 
+-- add some values.
 
 -- SUGGESTION :
 /* CREATE TABLE aptech_php.apRole
@@ -12,11 +13,11 @@ INSERT INTO aptech_php.apRole (rTitle)
 VALUES ('Administrator'),('Copywriter');
  */
 CREATE TABLE mai_my_project.role(
-rid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(255)
 );
-INSERT INTO mai_my_project.role (rid, name)
-VALUES (1,"Mai"), (2, "Lan");
+INSERT INTO mai_my_project.role ( name)
+VALUES ("Mai"), ("Lan");
 
 -- EXERCISE 2 : 
 /* 
@@ -40,13 +41,20 @@ ADD FOREIGN KEY (uRole) REFERENCES aptech_php.apRole(rId);
 INSERT INTO aptech_php.apUser (uLastName,uFirstName,uEmail)
 VALUES ('Ford','Henry','henry.ford@gmail.com');
 */
+-- Bảng tham chiếu gọi là bảng mẹ, còn bảng chứa khóa ngoại gọi là bảng con. 
+-- Khóa ngoại trong bảng con thường tham chiếu tới khóa chính PRIMARY KEY 
+-- trong bảng mẹ.
+-- Có thể dùng từ khóa CREAT hoặc ALTER
 ALTER TABLE mai_my_project.table
-MODIFY COLUMN email VARCHAR(255) NOT NULL UNIQUE;
+	MODIFY COLUMN email VARCHAR(255) NOT NULL UNIQUE;
 ALTER TABLE mai_my_project.table 
-MODIFY COLUMN id int DEFAULT 2, 
-MODIFY COLUMN dob datetime DEFAULT NOW();
-ALTER TABLE mai_my_project.table
-ADD FOREIGN KEY (id) REFERENCES mai_my_project.role(rId); 
-INSERT INTO mai_my_project.table (email)
-VALUES ('henry.ford@gmail.com');
+	MODIFY COLUMN id int DEFAULT 2;
+
+ALTER TABLE mai_my_project.table 
+	ADD dob DATE;	
+ALTER TABLE mai_my_project.table 
+	MODIFY COLUMN dob datetime DEFAULT  NOW();
+-- ALTER TABLE mai_my_project.role
+-- ADD CONSTRAINT  fk_ten
+-- FOREIGN KEY (id, name) REFERENCES mai_my_project.table (id, name);
 

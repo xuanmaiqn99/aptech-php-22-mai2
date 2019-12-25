@@ -26,8 +26,9 @@ VALUES ('36737ghcv', '2017-12-25', 4), ('6ffh7gd', '2016-03-27', 5),
 ('g77dgf', '2019-12-30', 1), ('jhgeygd34', '2018-05-17', 2),
 ('hgdy658', '2018-08-12',3); 
 
-SELECT users.id as users_id, users.name, users.email, passports.id as passports_id, 
+SELECT users.id as user_id, users.name, users.email, passports.id as passports_id, 
 passports.code, passports.ngay_cap  
 FROM aptech_php_22_5.users
 INNER JOIN aptech_php_22_5.passports ON 
-users.id =  passports.users_id;
+users.id =  passports.user_id
+WHERE passports.user_id=1;

@@ -5,7 +5,8 @@
 SET uState = -1 
 WHERE uId = 4; */
 
+SET SQL_SAFE_UPDATES=0;
 UPDATE mai_my_project.table 
-SET name = 1 
+SET name = 'Nam' 
 WHERE id = 2;
 

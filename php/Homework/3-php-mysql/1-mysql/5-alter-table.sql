@@ -10,4 +10,3 @@ ALTER TABLE aptech_php_12.users ADD dob date;
 ALTER TABLE aptech_php_12.users DROP COLUMN DOB; 
 */
 ALTER TABLE  mai_my_project.table DROP COLUMN DOB; 
-

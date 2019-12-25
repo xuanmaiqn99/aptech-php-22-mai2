@@ -1,5 +1,6 @@
 -- PRIMARY KEY & AUTO INCREMENT --
--- EXERCISE 1 : Change Id of your User table to Primary Key and make it auto increment each insert data.
+-- EXERCISE 1 : Change Id of your User table to Primary Key and make
+-- it auto increment each insert data.
 -- SUGGESTION :
 /* ALTER TABLE aptech_php.apUser
 ADD PRIMARY KEY(uId);
@@ -17,7 +18,5 @@ ADD PRIMARY KEY (id);
 ALTER TABLE mai_my_project.table
 MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT;
 
-INSERT INTO mai_my_project.table
-    (email, DOB)
-VALUES
-    ('xuanmai@gmail.com', '1993-03-23');
+INSERT INTO mai_my_project.table (name)
+VALUES ('Lien');

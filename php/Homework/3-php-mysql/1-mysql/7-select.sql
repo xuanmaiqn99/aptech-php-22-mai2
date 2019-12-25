@@ -14,6 +14,7 @@ FROM aptech_php.apUser; */
 
 SELECT DISTINCT name
 FROM mai_my_project.table;
+-- lựa chọn các cột khác nhau
 
 -- EXERCISE 3 : Display top 3 user in your database.
 /* SELECT *
@@ -22,7 +23,7 @@ LIMIT 3; */
 
 SELECT *
 FROM mai_my_project.table
-LIMIT 5;
+LIMIT 3;
 
 -- EXERCISE 4 : Display users who have role = 1 and state = 1;
 /* SELECT *
@@ -31,5 +32,5 @@ WHERE uRole = 1 and uState = 1; */
 
 SELECT *
 FROM mai_my_project.table
-WHERE id = 1; 
+WHERE id = 1;  
 
