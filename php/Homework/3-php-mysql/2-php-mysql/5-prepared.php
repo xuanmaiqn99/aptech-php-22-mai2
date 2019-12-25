@@ -33,20 +33,32 @@ $password = "";
 $databaseName = "myproject";
 // Create connection
 $connect = mysqli_connect($serverName, $userName, $password, $databaseName);
+
 // Check connection
 if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$conn = connectDatabase();
-$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $firstname, $lastname, $email);
 
-$firstname = "Bui";
-$lastname = "Mai";
-$email = "xuanmaiqn1999@gmail.com";
-$stmt->execute();
+$sql = "INSERT INTO myproject.users (email, password)
+VALUES (?, ?)";
 
-$firstname = "Han";
-$lastname = "Hua";
-$email = "huahan@gmail.com";
-$stmt->execute();
+if ($stmt = mysqli_prepare($connect, $sql)){
+    mysqli_stmt_bind_param($stmt, "ss",$email, $password);
+
+    $email = "mai@gmail.com";
+    $password = '6576feu';
+    mysqli_stmt_execute($stmt);
+
+    $email = "lan@gmail.com";
+    $password = '6fgyuf';
+    mysqli_stmt_execute($stmt);
+    
+    echo "Insert successful ";
+}
+else{
+    echo "Error: $sql. " . mysqli_error($connect);
+}
+mysqli_stmt_close($stmt);
+
+mysqli_close($connect);
+?>

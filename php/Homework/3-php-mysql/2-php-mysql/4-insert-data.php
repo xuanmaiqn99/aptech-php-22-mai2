@@ -41,7 +41,8 @@ if (!$connect) {
 }
 $sql = "INSERT INTO myproject.users (email, password)
 VALUES ('xuanmai@gmail.com','maibui'),
-('hong@gmail.com','123456'), ('nam@gmail.com', '63749'), ('nu@gmail.com', 'ygfsu'), ('bede@gmail.com', '78363')";
+('hong@gmail.com','123456'), ('nam@gmail.com', '63749'), 
+('nu@gmail.com', 'ygfsu'), ('bede@gmail.com', '78363')";
 if(mysqli_query($connect, $sql)){
     echo "Table created successfully";
 }else {
