@@ -67,16 +67,40 @@ $antimage->run()->hit()->stop();
  */
 echo "<br><br>DO EXERCISE INSIDE COMMENT CODE BELOW THIS LINE<hr>";
 
-interface food{
-    const pizza = 80;
+interface foods{
+    const PIZZA = 80;
     public function type();
 }
-interface clothes{
-    const shirt = 50;
+interface drinks{
+    const COCA = 50;
     public function price();
 }
-class Employess implements food, clothes{
+class Employees implements foods, drinks{
     protected $name;
-    protected $pizza;
-    protected $shirt;
+    protected $fd;
+    protected $dk;
+    public function __construct($name = "Undefined"){
+        echo "Start <br>";
+        $this->name = $name;
+        $this->display();
+        $this->fd = foods::PIZZA;
+    }
+    public function type(){
+        $this->fd = foods::PIZZA;
+        echo "$this->name have a meal, with food = $this->fd";
+        return $this;
+    }
+    public function price(){
+        $this->dk = drinks::COCA;
+        echo " and drink = $this->dk. $this->name can enjoy.<br>";
+        return $this;
+    }
+    public function display(){
+        echo "Name: $this->name.<br>";
+    }
+    public function __destruct(){
+        echo "End of class.<br>";
+    }
 }
+$antimage = new Employees("Employees");
+$antimage->type()->price();
