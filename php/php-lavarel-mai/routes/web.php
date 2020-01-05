@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('')
+Router::get('/login','Controller@login');
+Router::get('/users','Controller@tableusers');
