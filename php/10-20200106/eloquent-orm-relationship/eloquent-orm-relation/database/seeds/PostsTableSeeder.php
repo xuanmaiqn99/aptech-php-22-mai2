@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class ArticlesTableSeeder extends Seeder
+class PostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,11 +13,11 @@ class ArticlesTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         for ($i = 0; $i < 10; $i++) {
-            $title = $faker->sentence($nbWord = 6, $variableNbWords = true);
-            DB::table('articles')->insert(
+            $title = $faker->sentence($nbWords = 6, $variableNbWords = true);
+            DB::table('posts')->insert(
                 [
                     'title' => $title,
-                    'slug' => str_replace(" ", "_", $title),
+                    'slug' => str_replace(" ","-",$title),
                     'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                     'content' => $faker->paragraph($nbSentences = 15, $variableNbSentences = true),
                 ]
