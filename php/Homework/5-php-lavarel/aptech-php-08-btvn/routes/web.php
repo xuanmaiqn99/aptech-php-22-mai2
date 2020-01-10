@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/products','ProductController@hienThiSanPham');
-// Route::get('products/{id}', function($id){
-//     return 'Products' . $id;
-// });
+Route::get('products/{id}', function($id){
+    return 'products' . $id;
+});

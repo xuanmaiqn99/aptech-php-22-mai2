@@ -1,6 +1,6 @@
   
 <?php
-echo $loiChao;
+
 foreach($users as $user){
   echo "<div>";
   echo $user->id;

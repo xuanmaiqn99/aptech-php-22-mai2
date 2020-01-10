@@ -21,4 +21,4 @@ Route::get('users/{id}', function($id){
     return 'User ' .$id;
 });
 Route::get('/quet-nha', 'Controller@quetnha');
-Route::get('/users', '@Controller@layTatCaNguoiDung');
+Route::get('/users', 'Controller@layTatCaNguoiDung');

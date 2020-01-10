@@ -15,11 +15,10 @@ class UsersTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for($i=0; $i<5; $i++){
             DB::table('users')->insert([
-                'name' => $faker->Name,
+                'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
                 'password' => $faker->password
             ]);
-            
         }
     }
 }
